@@ -1,11 +1,12 @@
 function arrayDiff(a, b) {
-  let newArray = []
+  // iterate over b
   for(let i = 0; i < b.length; i++) {
+    // for each iteration, make a character to remove
     let charToRemove = b[i]
-    newArray = a.filter(el => el != charToRemove)
+    // filter out the character to remove, wash, rinse, repeat
+    a = a.filter(el => el != charToRemove)
   }
-  console.log(newArray)
-  return newArray
+  return a
 }
 
 // arrayDiff([1,2], [1]) // return [2]
@@ -13,7 +14,7 @@ function arrayDiff(a, b) {
 // arrayDiff([1,2,2], [2]) // return [1]
 // arrayDiff([1,2,2], [])  // return [1,2,2]
 // arrayDiff([], [1,2]) // return []
-arrayDiff([1,2,3], [1,2]) // return [3]
+//arrayDiff([1,2,3], [1,2]) // return [3]
   
   
 /*

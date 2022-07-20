@@ -26,3 +26,14 @@ function highAndLow(numbers){
 
 highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4") // return "42 -9"
 highAndLow("1 2 3") // return "3 1"
+
+
+/*
+
+simpler answer:
+function highAndLow(numbers){
+  numbers = numbers.split(' ');
+  return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+
+*/

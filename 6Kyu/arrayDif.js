@@ -9,6 +9,8 @@ function arrayDiff(a, b) {
   return a
 }
 
+// a simpler answer return a.filter(e => !b.includes(e));
+
 // arrayDiff([1,2], [1]) // return [2]
 // arrayDiff([1,2,2], [1]) // return [2,2]
 // arrayDiff([1,2,2], [2]) // return [1]

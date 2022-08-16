@@ -3,9 +3,7 @@ function topThreeWords(text) {
   const filterOutSpecialCharacters = textToLowerCase.replace(/[^a-zA-Z' ]/g, "")
   const textToArray = filterOutSpecialCharacters.split(" ")
   const filterTextInArray = textToArray.filter(element => element)
-  
-  //console.log(textToLowerCase.replace(/[^a-zA-Z' ]/g, ""));
-  
+   
   const count = {}
   
   filterTextInArray.forEach(element => {
@@ -23,42 +21,38 @@ function topThreeWords(text) {
   })
   
   const finalResult = sortArrayResult.reverse()
-  
+    
   console.log(finalResult)
+  console.log(typeof finalResult)
   
   let first
   let second
   let third
   
-  if (finalResult.length === 1) {
-    first = finalResult[0][0]
-  } else if (finalResult.length === 2) {
-    first = finalResult[0][0]
-    second = finalResult[1][0]
-  } else if (finalResult.length >= 3) {
-    first = finalResult[0][0]
-    second = finalResult[1][0]
-    third = finalResult[2][0]
-  }
+  let resultArray = []
   
-  if (finalResult === []) {
+    if (finalResult.length === 0) {
+      return []
+    } else if (finalResult.length === 1) {
+      first = finalResult[0][0]
+      resultArray.push(first)
+      return resultArray
+    } else if (finalResult.length === 2) {
+      first = finalResult[0][0]
+      second = finalResult[1][0]
+      resultArray.push(first, second)
+      return resultArray
+    } else if (finalResult.length >= 3) {
+      first = finalResult[0][0]
+      second = finalResult[1][0]
+      third = finalResult[2][0]
+      resultArray.push(first, second, third)
+      return resultArray
+    }
     
-  }
-    else if (finalResult.length === 1) {
-    console.log(first)
-    return first
-  } else if (finalResult.length === 2) {
-    console.log(first, second)
-    return (first, second)
-  } else if (finalResult.length >= 3) {
-    console.log(first, second, third)
-    return (first, second, third)
-  }
 }
 
-
-
-//topThreeWords("a a a  b  c c  d d d d  e e e e e") //returns ['e','d','a'] WORKS!!
+//console.log(topThreeWords("a a a  b  c c  d d d d  e e e e e")) //returns ['e','d','a'] WORKS!!
   
 //topThreeWords("a a c b b") //returns ['a','b','c']  THIS ONE WORKS, YAY! GO YOU!
   
@@ -72,27 +66,10 @@ function topThreeWords(text) {
 
 //topThreeWords("  '  ") //returns [] WORKS!
   
-topThreeWords(`In a village of La Mancha, the name of which I have no desire to call to
-mind, there lived not long since one of those gentlemen that keep a lance
-in the lance-rack, an old buckler, a lean hack, and a greyhound for
-coursing. An olla of rather more beef than mutton, a salad on most
-nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra
-on Sundays, made away with three-quarters of his income.`)  //returns ['a','of','on']
+// topThreeWords(`In a village of La Mancha, the name of which I have no desire to call to
+// mind, there lived not long since one of those gentlemen that keep a lance
+// in the lance-rack, an old buckler, a lean hack, and a greyhound for
+// coursing. An olla of rather more beef than mutton, a salad on most
+// nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra
+// on Sundays, made away with three-quarters of his income.`)  //returns ['a','of','on']
 // THIS ONE WORKS!!! YAY, BIZZNIZZLE!
-
-/*
-
-PROBLEMS - FIRST INSTANCE RETURNS AN EMPTY STRING AS THIRD; NEED TO TAKE OUT ANY FORWARD SLASHES //; TAKE OUT ANYTHING THAT DOESN'T HAVE A LETTER IN IT. THIS IS THE LAST? THING TO DO?
-
-Write a function that, given a string of text (possibly with punctuation and line-breaks), returns an array of the top-3 most occurring words, in descending order of the number of occurrences.
-
-Assumptions:
-A word is a string of letters (A to Z) optionally containing one or more apostrophes (') in ASCII.
-Apostrophes can appear at the start, middle or end of a word ('abc, abc', 'abc', ab'c are all valid)
-Any other characters (e.g. #, \, / , . ...) are not part of a word and should be treated as whitespace.
-Matches should be case-insensitive, and the words in the result should be lowercased.
-Ties may be broken arbitrarily.
-If a text contains fewer than three unique words, then either the top-2 or top-1 words should be returned, or an empty array if a text contains no words.
-
-THIS DIDN'T WORK -  const result = countTotal.sort((a,b) => a[1].localCompare(b[1]));
-*/

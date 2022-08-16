@@ -22,6 +22,17 @@ function pigIt(str){
   return result
 }
 
+//BEST ANSWERS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+function pigItBest(str){
+  return str.replace(/(\w)(\w*)(\s|$)/g, "\$2\$1ay\$3")
+}
+
+function pigItPrettyGood(str) {
+  return str.replace(/\w+/g, (w) => {
+    return w.slice(1) + w[0] + 'ay';
+  });
+}
 
 //pigIt('Pig latin is cool') //returns 'igPay atinlay siay oolcay' WORKS!
 //pigIt('This is my string') //returns 'hisTay siay ymay tringsay' WORKS!

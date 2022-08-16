@@ -1,7 +1,10 @@
 function topThreeWords(text) {
   const textToLowerCase = text.toLowerCase()
-  const textToArray = textToLowerCase.split(" ")
+  const filterOutSpecialCharacters = textToLowerCase.replace(/[^a-zA-Z' ]/g, "")
+  const textToArray = filterOutSpecialCharacters.split(" ")
   const filterTextInArray = textToArray.filter(element => element)
+  
+  //console.log(textToLowerCase.replace(/[^a-zA-Z' ]/g, ""));
   
   const count = {}
   
@@ -38,7 +41,10 @@ function topThreeWords(text) {
     third = finalResult[2][0]
   }
   
-  if (finalResult.length === 1) {
+  if (finalResult === []) {
+    
+  }
+    else if (finalResult.length === 1) {
     console.log(first)
     return first
   } else if (finalResult.length === 2) {
@@ -58,20 +64,20 @@ function topThreeWords(text) {
   
 //topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e") //returns ['e','ddd','aa'] THIS ONE WORKS!!! GET IT, BROHEIM!
 
-topThreeWords("  //wont won't won't ") //returns ["won't", "wont"]  NEED TO TAKE OUT FORWARD SLASHES //
+//topThreeWords("  //wont won't won't ") //returns ["won't", "wont"]  WORKS!
   
-//topThreeWords("  , e   .. ") //returns ["e"] NEED TO TAKE OUT THINGS THAT AREN'T LETTERS
+//topThreeWords("  , e   .. ") //returns ["e"] WORKS!
 
-//topThreeWords("  ...  ") //returns [] NEED TO TAKE OUT THINGS THAT AREN'T LETTERS
+//topThreeWords("  ...  ") //returns [] WORKS!
 
-//topThreeWords("  '  ") //returns [] NEED TO TAKE OUT THINGS THAT AREN'T LETTERS
+//topThreeWords("  '  ") //returns [] WORKS!
   
-// topThreeWords(`In a village of La Mancha, the name of which I have no desire to call to
-// mind, there lived not long since one of those gentlemen that keep a lance
-// in the lance-rack, an old buckler, a lean hack, and a greyhound for
-// coursing. An olla of rather more beef than mutton, a salad on most
-// nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra
-// on Sundays, made away with three-quarters of his income.`)  //returns ['a','of','on']
+topThreeWords(`In a village of La Mancha, the name of which I have no desire to call to
+mind, there lived not long since one of those gentlemen that keep a lance
+in the lance-rack, an old buckler, a lean hack, and a greyhound for
+coursing. An olla of rather more beef than mutton, a salad on most
+nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra
+on Sundays, made away with three-quarters of his income.`)  //returns ['a','of','on']
 // THIS ONE WORKS!!! YAY, BIZZNIZZLE!
 
 /*

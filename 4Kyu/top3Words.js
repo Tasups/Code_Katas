@@ -1,10 +1,11 @@
 function topThreeWords(text) {
   const textToLowerCase = text.toLowerCase()
   const textToArray = textToLowerCase.split(" ")
+  const filterTextInArray = textToArray.filter(element => element)
   
   const count = {}
   
-  textToArray.forEach(element => {
+  filterTextInArray.forEach(element => {
   count[element] = (count[element] || 0) + 1;
     });
 
@@ -22,23 +23,42 @@ function topThreeWords(text) {
   
   console.log(finalResult)
   
-  const first = finalResult[0][0]
-  const second = finalResult[1][0]
-  const third = finalResult[2][0]
+  let first
+  let second
+  let third
   
-  console.log(first,second,third)
-  return (first,second,third)
+  if (finalResult.length === 1) {
+    first = finalResult[0][0]
+  } else if (finalResult.length === 2) {
+    first = finalResult[0][0]
+    second = finalResult[1][0]
+  } else if (finalResult.length >= 3) {
+    first = finalResult[0][0]
+    second = finalResult[1][0]
+    third = finalResult[2][0]
+  }
+  
+  if (finalResult.length === 1) {
+    console.log(first)
+    return first
+  } else if (finalResult.length === 2) {
+    console.log(first, second)
+    return (first, second)
+  } else if (finalResult.length >= 3) {
+    console.log(first, second, third)
+    return (first, second, third)
+  }
 }
 
 
 
-//topThreeWords("a a a  b  c c  d d d d  e e e e e") //returns ['e','d','a']
+//topThreeWords("a a a  b  c c  d d d d  e e e e e") //returns ['e','d','a'] WORKS!!
   
 //topThreeWords("a a c b b") //returns ['a','b','c']  THIS ONE WORKS, YAY! GO YOU!
   
 //topThreeWords("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e") //returns ['e','ddd','aa'] THIS ONE WORKS!!! GET IT, BROHEIM!
 
-//topThreeWords("  //wont won't won't ") //returns ["won't", "wont"]  NEED TO TAKE OUT FORWARD SLASHES //
+topThreeWords("  //wont won't won't ") //returns ["won't", "wont"]  NEED TO TAKE OUT FORWARD SLASHES //
   
 //topThreeWords("  , e   .. ") //returns ["e"] NEED TO TAKE OUT THINGS THAT AREN'T LETTERS
 

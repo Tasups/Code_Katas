@@ -1,4 +1,7 @@
-var isSquare = function(n){
+
+// COMPLETED
+
+var isSquare = function (n) {
   const squareRoot = Math.sqrt(n)
   if(n < 0) {
     return false
@@ -9,12 +12,12 @@ var isSquare = function(n){
 }
 
 
-  isSquare(-1) //returns false, "-1: Negative numbers cannot be square numbers");
-  isSquare( 0) //returns true, "0 is a square number (0 * 0)");
-  isSquare( 3) //returns false, "3 is not a square number");
-  isSquare( 4) //returns true, "4 is a square number (2 * 2)");
-  isSquare(25) //returns true, "25 is a square number (5 * 5)");
-  isSquare(26) //returns false, "26 is not a square number");
+  console.log(isSquare(-1)) //returns false, "-1: Negative numbers cannot be square numbers");
+  console.log(isSquare( 0)) //returns true, "0 is a square number (0 * 0)");
+  console.log(isSquare(3)) //returns false, "3 is not a square number");
+  console.log(isSquare( 4)) //returns true, "4 is a square number (2 * 2)");
+  console.log(isSquare(25)) //returns true, "25 is a square number (5 * 5)");
+  console.log(isSquare(26)) //returns false, "26 is not a square number");
   
   /*
 Given an integral number, determine if it's a square number:

@@ -1,3 +1,6 @@
+
+// NOT FINISHED
+
 function findOdd(array) {
   //happy coding!
   return 0;

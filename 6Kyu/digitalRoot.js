@@ -1,3 +1,6 @@
+
+// NOT COMPLETED
+
 function digital_root(n) {
   let total = 0
   let int
@@ -8,6 +11,11 @@ function digital_root(n) {
     
     for (let i = 0; i < nToArray.length; i++) {
       int = parseInt(nToArray[i], 10)
+      if (total.length > 1) {
+        distillNum(total);
+      } else if (total.length === 1) {
+        return total;
+      }
       total += int
     }
     return total
@@ -15,16 +23,12 @@ function digital_root(n) {
   
   distillNum(n)
   
-  if (total.length > 1) {
-    distillNum(total)
-  } else if (total.length === 1) {
-    return total
-  }
+  
   console.log(total)
 }
 
 digital_root(16) //returns 7
-digital_root(456) //returns 6 
+digital_root(456)//returns 6 
 
 /*
 

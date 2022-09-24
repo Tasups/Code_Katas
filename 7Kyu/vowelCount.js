@@ -1,3 +1,6 @@
+
+// COMPLETED
+
 function getCount(str) {
   let count = 0
   for (let i = 0; i < str.length; i++) {
@@ -9,7 +12,7 @@ function getCount(str) {
   return count
 }
 
-getCount("abracadabra") // returns 5
+console.log(getCount("abracadabra")) // returns 5
 
 // a much better solution! Need to learn regex! 
 /*

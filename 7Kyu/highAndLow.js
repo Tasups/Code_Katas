@@ -1,4 +1,7 @@
-function highAndLow(numbers){
+
+// COMPLETED
+
+function highAndLow(numbers) {
   const replacedStr = numbers.split(' ') 
   let numArray = []
   for (let x = 0; x < replacedStr.length; x++) {
@@ -24,8 +27,8 @@ function highAndLow(numbers){
   return answer
 }
 
-highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4") // return "42 -9"
-highAndLow("1 2 3") // return "3 1"
+console.log(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4")) // return "42 -9"
+console.log(highAndLow("1 2 3")) // return "3 1"
 
 
 /*

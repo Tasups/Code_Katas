@@ -1,3 +1,6 @@
+
+//COMPLETED
+
 function makeNegative(num) {
   let negNum
   if (num < 0) {

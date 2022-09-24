@@ -1,3 +1,6 @@
+
+// COMPLETED
+
 function arrayDiff(a, b) {
   // iterate over b
   for(let i = 0; i < b.length; i++) {
@@ -11,12 +14,12 @@ function arrayDiff(a, b) {
 
 // a simpler answer return a.filter(e => !b.includes(e));
 
-// arrayDiff([1,2], [1]) // return [2]
-// arrayDiff([1,2,2], [1]) // return [2,2]
-// arrayDiff([1,2,2], [2]) // return [1]
-// arrayDiff([1,2,2], [])  // return [1,2,2]
-// arrayDiff([], [1,2]) // return []
-//arrayDiff([1,2,3], [1,2]) // return [3]
+console.log(arrayDiff([1,2], [1])) // return [2]
+console.log(arrayDiff([1,2,2], [1])) // return [2,2]
+console.log(arrayDiff([1,2,2], [2])) // return [1]
+console.log(arrayDiff([1,2,2], []))  // return [1,2,2]
+console.log(arrayDiff([], [1,2])) // return []
+console.log(arrayDiff([1,2,3], [1,2])) // return [3]
   
   
 /*

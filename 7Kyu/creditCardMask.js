@@ -1,3 +1,6 @@
+
+// COMPLETED
+
 // const str = 'KobiyashiMaru';
 // // figure out what to unmask
 // const startUnmask = str.length - 4;

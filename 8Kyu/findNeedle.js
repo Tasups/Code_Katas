@@ -1,3 +1,6 @@
+
+//COMPLETED
+
 function findNeedle(haystack) {
   const arrayIndex = haystack.indexOf('needle')
   return(`found the needle at position ${arrayIndex}`)

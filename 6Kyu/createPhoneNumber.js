@@ -1,4 +1,7 @@
-function createPhoneNumber(numbers){
+
+// COMPLETED
+
+function createPhoneNumber(numbers) {
   const areaCodeNums = numbers.slice(0,3);
   const areaCodeToString = areaCodeNums.toString();
   const areaCodeReplaceCommas = areaCodeToString.replace(/,/g, ""); 
@@ -12,7 +15,7 @@ function createPhoneNumber(numbers){
   const phoneEndtoString = phoneEndNums.toString()
   const phoneEndReplaceCommas = phoneEndtoString.replace(/,/g, "")
   //console.log(phoneEndReplaceCommas)
-  //console.log(`${areaCodeResult}${prefixNumsReplaceCommas}-${phoneEndReplaceCommas}`)
+  console.log(`${areaCodeResult}${prefixNumsReplaceCommas}-${phoneEndReplaceCommas}`)
   return `${areaCodeResult}${prefixNumsReplaceCommas}-${phoneEndReplaceCommas}`
 }
 

@@ -1,4 +1,7 @@
-function findOutlier(integers){
+
+// COMPLETED
+
+function findOutlier(integers) {
   //make an array for even and odd numbers
   let even = []
   let odd = []

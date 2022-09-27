@@ -1,3 +1,6 @@
+
+//COMPLETED
+
 function numberToString(num) {
   // Return a string of the number here!
   const result = num.toString()
@@ -5,5 +8,5 @@ function numberToString(num) {
 }
 
 
-numberToString(67) //return '67'
+console.log(numberToString(67)) //return '67'
 
